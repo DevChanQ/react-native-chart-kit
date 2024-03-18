@@ -579,7 +579,7 @@ class LineChart extends AbstractChart<LineChartProps, LineChartState> {
               })
               .join(" ") +
             ` ${paddingRight +
-              ((width - paddingRight) / dataset.data.length) *
+              ((width - paddingRight) / (dataset.data.length - 1)) *
                 (dataset.data.length - 1)},${height +
               paddingTop} ${paddingRight},${height + paddingTop}`
           }
@@ -907,7 +907,7 @@ class LineChart extends AbstractChart<LineChartProps, LineChartState> {
                   ...config,
                   count: count,
                   data: datas,
-                  paddingTop: 42 as number,
+                  paddingTop: 43 as number,
                   paddingRight: (width + 6) as number,
                   formatYLabel,
                   decimalPlaces: chartConfig.decimalPlaces
